@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript - Dasar</title>
+</head>
+
+<body>
+
+  <p id="pesan"></p>
+  <script>
+    // variable = sebuah penampung nilai
+    // const = nilainya tetap
+    // var = nilainya bisa di ubah
+    // let = nilainya bisa di ubah
+    const nama_depan = "Alfian";
+    const nama_belakang = "Noorokhim";
+    console.log("Nama saya adalah " + nama_depan + " " + nama_belakang);
+    console.log(`Nama saya adalah ${nama_depan} ${nama_belakang}`);
+
+    let nama = "Jokowi";
+    let alamat = "Solo";
+    let pesan = `Halo saya ${nama}, tinggal di ${alamat}, saya akan lawan.`;
+    let angka1 = 9;
+    let angka2 = 4;
+
+    document.getElementById("pesan").innerHTML = pesan;
+    console.log(`Hasilnya adalah: ${angka1} + ${angka2} =`, (angka1 + angka2));
+    console.log(`Hasilnya adalah: ${angka1} - ${angka2} =`, (angka1 - angka2));
+    console.log(`Hasilnya adalah: ${angka1} * ${angka2} =`, (angka1 * angka2));
+    console.log(`Hasilnya adalah: ${angka1} / ${angka2} =`, (angka1 / angka2));
+
+    console.log(`Hasilnya adalah: ${angka1} % ${angka2} =`, (angka1 % angka2));
+    // document.write(pesan);
+  </script>
+</body>
+
+</html>
