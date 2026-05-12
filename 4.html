@@ -8,36 +8,46 @@
 </head>
 
 <body>
+  <form action="" method="post" onsubmit="return false">
+    <input type="radio" name="pelanggaran" id="ya">ya
+    <input type="radio" name="pelanggaran" id="tidak">tidak
+    <button onclick="cekHasil()">Cek</button>
+  </form>
+  <div id="hasilnya">
+
+  </div>
   <script>
-    let nama = "Budi Hartono";
-    let nilaiTeori = 70;
-    let nilaiPraktek = 70;
-    let kehadiran = 90;
-    let pelanggaranBerat = false;
-    let rata = (nilaiTeori + nilaiPraktek) / 2;
+    function cekHasil() {
+      let nama = "Budi Hartono";
+      let nilaiTeori = 70;
+      let nilaiPraktek = 70;
+      let kehadiran = 90;
+      let pelanggaranBerat = false;
+      let rata = (nilaiTeori + nilaiPraktek) / 2;
 
-    let status = "";
+      let status = "";
 
-    if (kehadiran < 90) {
-      status = "Tidak Lulus (Kehadiran kurang)"
-    } else if (nilaiTeori < 75) {
-      status = "Tidak Lulus (Praktek kurang)"
-    } else if (pelanggaranBerat === true) {
-      status = "Tidak Lulus (Pelanggaran Disiplin)"
-    } else {
-      if (rata > 90) {
-        status = "Lulus dengan predikat sangat baik"
-      } else if (rata > 85) {
-        status = "Lulus dengan predikat baik"
+      if (kehadiran < 90) {
+        status = "Tidak Lulus (Kehadiran kurang)"
+      } else if (nilaiTeori < 75) {
+        status = "Tidak Lulus (Praktek kurang)"
+      } else if (pelanggaranBerat === true) {
+        status = "Tidak Lulus (Pelanggaran Disiplin)"
       } else {
-        status = "Lulus Standart"
-      }
-      document.getElementById("hasil").innerHTML =
-        `
+        if (rata > 90) {
+          status = "Lulus dengan predikat sangat baik"
+        } else if (rata > 85) {
+          status = "Lulus dengan predikat baik"
+        } else {
+          status = "Lulus"
+        }
+        document.getElementById("hasil").innerHTML =
+          `
           <p> ${nama} </p>
           <p> ${rata} </p>
           <p> ${status} </p>
-        `
+        `;
+      }
     }
   </script>
   <!-- <h2>Form Kelulusan Siswa</h2>

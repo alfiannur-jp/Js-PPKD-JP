@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM</title>
+</head>
+
+<body>
+  <!--
+  DOM : Document Object Modeling
+  Seperti pohon keluarga
+  DOM adalah jembatan yang menghubungkan antara HTML ke dalam javascript kalian
+
+  body {}
+  body.
+  <p>Tes</p>
+  <p>PPKD</p>
+  -->
+
+  <h1 id="heading1" class="heading1">Selamat Datang</h1>
+  <h1 id="heading1" class="heading1">Selamat Datang</h1>
+
+  <script>
+    let heading = document.querySelector("h1");
+    let heading1Class = document.querySelector(".heading1");
+    let heading1Id = document.querySelector("#heading1");
+    let heading1IdNew = document.getElementById('heading1');
+
+    console.log(heading.innerText);
+
+    heading1Class.innerText = "Belajar Javascript, saya sudah jago";
+    heading1Class.innerHTML = "Belajar Javascript, saya sudah <b>Jago</b>";
+  </script>
+</body>
+
+</html>

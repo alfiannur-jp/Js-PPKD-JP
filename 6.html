@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM</title>
+  <style>
+    .text-success {
+      color: green;
+      font-weight: bold;
+      font-size: 25px;
+    }
+  </style>
+</head>
+
+<body>
+  <input type="text" id="inputNama" placeholder="Masukkan nama anda">
+  <button id="btn-sapa">Sapa saya!</button>
+
+  <h2 id="teks-sapaan"></h2>
+
+  <br>
+  <br>
+
+  <ul id="daftar-belanja">
+    <li>Apel</li>
+    <li>Jeruk</li>
+    <li>Nanas</li>
+  </ul>
+  <button id="tambah-buah">Tambah Belanjaan</button>
+
+  <script>
+    // event handling + DOM
+    // #:id, class: . element/TAG: h1
+    const btnSapa = document.getElementById('btn-sapa');
+    const daftarBelanja = document.getElementById('daftar-belanja');
+
+    btnSapa.addEventListener('click', function () {
+      // mau melakukan apa
+      const inputNama = document.getElementById('inputNama').value;
+      console.log(inputNama);
+      const teksSapaan = document.getElementById('teks-sapaan');
+      console.dir(teksSapaan);
+      teksSapaan.innerText = `Halo, selamat datang ${inputNama}`;
+      // teksSapaan.style.color = "green";
+      // teksSapaan.style.fontSize = "20px";
+      // teksSapaan.style.fontWeight = "normal";
+      teksSapaan.classList.add('text-success');
+      // teksSapaan.innerText = "Halo, selamat datang " + inputNama;
+    });
+    // btnSapa.addEventListener('click', () => {}); == arrow function
+
+    const tambahBuah = document.getElementById('tambah-buah');
+    tambahBuah.addEventListener('click', () => {
+      // appendChild  :
+      // innerHTML    :
+      let liBaru = document.createElement('li');
+      liBaru.innerText = "Semangka";
+      daftarBelanja.innerHTML += "<li>Pisang</li>";
+      daftarBelanja.appendChild(liBaru);
+    });
+
+  </script>
+</body>
+
+</html>
